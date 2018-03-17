@@ -75,9 +75,8 @@ int main(){
 			avl.insert(words[i]);
 			BTree.insert(words[i]);
 	}
-    AVL Btree;
-/*	for (auto& i : words)*/
-/*		ht.insert(i);*/
+/*	for (auto& i : words)
+		ht.insert(i);*/
     	while(true){
     	int testnum = getTest();
 
@@ -181,22 +180,20 @@ int main(){
 		for( auto & word : avl_sorted){
                      outfile<< word << "\n";
                 }
-             const vector<string> & Btree_sorted = Btree.sort();
-           /*sort inBST clock_t t7 = clock();
-                 const vector<string> & avl_sorted = avl.sort();
-                 t7 = clock()-t7;
-                 double timeSpent_avl = ((double)t7) / CLOCKS_PER_SEC;
- 
-         for( auto & word : avl_sorted){
-                      outfile<< word << "\n";
-                 }*/
-
-      //sort in hash table
+           
+   
+		// sort in hash table
 		clock_t t8 = clock();
           	const std::vector<string> &BTree_sorted = BTree.sort(); 
         	t8 = clock()-t8;
                 double timeSpent_BTree = ((double)t8) / CLOCKS_PER_SEC;
-                for(auto &word : avl_sorted)
+
+                /*/ sort in hash table
+         clock_t t8 = clock();
+             const std::vector<string> &BTree_sorted = BTree.sort();
+             t8 = clock()-t8;
+double timeSpent_BTree = ((double)t8) / CLOCKS_PER_SEC;
+*/              for(auto &word : avl_sorted)
         	    {
          	         outfile << "\n" << word;
         	    }
@@ -219,22 +216,13 @@ int main(){
             t9 = clock()- t9;
             double timeSpent_avl = ((double)t9) / CLOCKS_PER_SEC;
 	    cout<<'\n';
-
-           /*clock_t t9 = clock();
-            avl.rangeSearch(x,y);
-            t9 = clock()- t9; 
-            double timeSpent_avl = ((double)t9) / CLOCKS_PER_SEC;
-        cout<<'\n';
-*/ 
-
-
-            clock_t t10 = clock();avl.rangeSearch(y,x);
-           // BTree.rangeSearch(x, y);
+            clock_t t10 = clock();
+            BTress.rangeSearch(x, y);
 	    t10 = clock()- t10;
-            double timeSpent_BTree = ((double)t10) / CLOCKS_PER_SEC;
+            double timeSpent_ht = ((double)t10) / CLOCKS_PER_SEC;
             
 	    cout<<"AVL: "<<timeSpent_avl<<endl;
-            cout<<"BTree: "<<timeSpent_BTree<<endl;
+            cout<<"Hash: "<<timeSpent_ht<<endl;
     }
 }
 
