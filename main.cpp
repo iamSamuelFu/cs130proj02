@@ -217,12 +217,12 @@ double timeSpent_BTree = ((double)t8) / CLOCKS_PER_SEC;
             double timeSpent_avl = ((double)t9) / CLOCKS_PER_SEC;
 	    cout<<'\n';
             clock_t t10 = clock();
-            BTress.rangeSearch(x, y);
+            BTree.rangeSearch(x, y);
 	    t10 = clock()- t10;
             double timeSpent_ht = ((double)t10) / CLOCKS_PER_SEC;
             
 	    cout<<"AVL: "<<timeSpent_avl<<endl;
-            cout<<"Hash: "<<timeSpent_ht<<endl;
+            cout<<"BTree: "<<timeSpent_ht<<endl;
     }
 }
 
